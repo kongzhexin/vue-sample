@@ -7,6 +7,7 @@
 </template>
 
 <script>
+    import Vue from 'vue'   
     export default {
         data () {
             return {
@@ -14,6 +15,18 @@
                 }
         },
         mounted:function (){
+           
+            Vue.http.interceptors.push((request, next) => {
+                
+                
+                next((response) => {
+                if (!response.ok) {
+
+                }
+              
+                return response;
+                })
+            });
             this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
                 headers: {
                     
@@ -23,7 +36,7 @@
                     this.articles=response.data.subjects
                 },function(){
                     console.log(response)
-                })
+                });
         }
 
     }

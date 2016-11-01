@@ -9,7 +9,7 @@ import { currency } from './currency'
 Vue.filter('currency', currency)
 
 
-   
+
 
 Vue.use(VueResource);
 Vue.use(VueRouter)
@@ -36,8 +36,8 @@ const router = new VueRouter({
 // 从而让整个应用都有路由功能
 const vm = new Vue({
   el: '#app',
-  data () {
-    return {name:"kongzx"}
+  data() {
+    return { name: "kongzx" }
   },
   store,
   router,
