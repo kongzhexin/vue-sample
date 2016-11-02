@@ -13,4 +13,4 @@ export const cartProducts = state => {
   })
 }
 
-export const showloading = state => false
+export const showLoading = state => state.loading.showLoading

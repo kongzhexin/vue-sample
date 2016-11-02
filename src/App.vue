@@ -23,7 +23,7 @@
     </p>
       <router-view></router-view>
       <div>
-        <loading v-show="showloading"></loading>
+        <loading ></loading>
       </div>
   </div>
   
@@ -31,11 +31,12 @@
 
 <script>
 
-import {mapGetters} from 'vuex'
+
 import ProductList from './components/ProductList.vue'
 import Cart from './components/Cart.vue'
 import Movie from './components/Movie.vue'
 import loading from './components/loading.vue'
+import Vue from  'vue'
 
 export default {
   name: 'app',
@@ -46,18 +47,16 @@ export default {
      
     }
   },
-  computed:{
-      ...mapGetters({
-        showloading:'showloading'
-      })
-  },
-   watch:{
-      '$route': 'change'
+  mounted :function (){
+    
     },
-    methods:{
-        change () {
-            this.msg=this.$route.fullPath
-        }
+  watch:{
+     '$route': 'change'
+    },
+  methods:{
+      change () {
+        this.msg=this.$route.fullPath
+      }
 
     }
 }

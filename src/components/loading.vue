@@ -1,5 +1,5 @@
 <template>
-    <div class="loading-overlay">
+    <div class="loading-overlay" v-show="showLoading">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
             <div class="sk-child sk-bounce2"></div>
@@ -8,10 +8,13 @@
     </div>
 </template>
 <script>
+import {mapGetters} from 'vuex'
 export default {
-
-
-
+	computed:{
+      ...mapGetters({
+        showLoading:'showLoading'
+      })
+    }
 }
 </script>
 
