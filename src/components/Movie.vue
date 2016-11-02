@@ -7,9 +7,6 @@
 </template>
 
 <script>
-    import Vue from 'vue'   
-    import * as types from '../store/mutation-types.js'
-
     export default {
         data () {
             return {
@@ -17,15 +14,7 @@
             }
         },
         mounted:function (){
-                Vue.http.interceptors.push((request, next) => {
-            
-                this.$store.commit(types.SHOW_LOADING)
-                next((response) => {
-                if (!response.ok) {}
-                this.$store.commit(types.SHOW_LOADING)
-                return response;
-                })
-            });
+                
             this.$http.jsonp('https://api.douban.com/v2/movie/top250?count=10', {}, {
                 headers: {
                 },

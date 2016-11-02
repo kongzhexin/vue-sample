@@ -24,3 +24,4 @@ export const getAllProducts = ({ commit }) => {
     commit(types.RECEIVE_PRODUCTS, { products })
   })
 }
+

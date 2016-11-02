@@ -5,6 +5,8 @@ import App from './App.vue'
 import store from './store'
 import VueRouter from 'vue-router'
 import { currency } from './currency'
+import * as types from './store/mutation-types.js'
+
 
 Vue.filter('currency', currency)
 
@@ -43,3 +45,12 @@ const vm = new Vue({
   router,
   render: h => h(App)
 })
+Vue.http.interceptors.push((request, next) => {
+
+  this.$store.commit(types.SHOW_LOADING)
+  next((response) => {
+    if (!response.ok) { }
+    this.$store.commit(types.SHOW_LOADING)
+    return response;
+  })
+});

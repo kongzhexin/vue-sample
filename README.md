@@ -1,6 +1,6 @@
 # vue-sample
 
-> A Vue.js project
+> A Vue.js project   use vue-router vuex  vue-resource 
 
 ## Build Setup
 
@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+For detailed explanation on how things work, consult the[docs for Vue 2.0](https://vuefe.cn)
