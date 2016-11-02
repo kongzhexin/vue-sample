@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the[docs for Vue 2.0](https://vuefe.cn)
+For detailed explanation on how things work, consult the [docs for Vue 2.0](https://vuefe.cn)

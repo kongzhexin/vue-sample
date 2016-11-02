@@ -1,30 +1,27 @@
 <template>
   <div id="app">
  
-    <h1>Shopping Cart Example</h1>
+    <router-link to="/" >Shopping Cart Example</router-link>
     <hr>
     <div class= "main">
       <div class="product">
-        <h2>Products</h2>
-        <product-list></product-list>
+       <!-- <product-list></product-list>-->
+        <router-view name='product'></router-view>
+        <router-view name='cart'></router-view>
       </div>
    
-      <cart></cart>
+     <!-- <cart></cart>-->
    
     </div>
-    <hr>
+    <router-link to="/movie" >Movie</router-link>
+    <div class='movie'>
+     <!-- <Movie></Movie>-->
+      <router-view name='movie'></router-view>
+    </div>
+   
     <div>
-      <h3>Movie</h3>
-      <Movie></Movie>
+     <loading ></loading>
     </div>
-     <p>
-        <router-link to="/foo">Go to Foo</router-link>
-        <router-link to="/bar">Go to Bar</router-link>
-    </p>
-      <router-view></router-view>
-      <div>
-        <loading ></loading>
-      </div>
   </div>
   
 </template>
@@ -33,14 +30,14 @@
 
 
 import ProductList from './components/ProductList.vue'
-import Cart from './components/Cart.vue'
-import Movie from './components/Movie.vue'
-import loading from './components/loading.vue'
+// import Cart from './components/Cart.vue'
+// import Movie from './components/Movie.vue'
+// import loading from './components/loading.vue'
 import Vue from  'vue'
 
 export default {
   name: 'app',
-  components: {ProductList,Cart ,Movie,loading},
+  components: {loading},
   data () {
     return {
       msg: 'Welcome to Kongzx Vue.js App'
