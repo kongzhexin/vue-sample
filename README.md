@@ -1,6 +1,7 @@
 # vue-sample
 
-> A Vue.js project   use vue-router vuex  vue-resource 
+> A Vue.js project 
+> Use vue-router,vuex,vue-resource 
 
 ## Build Setup
 

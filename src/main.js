@@ -10,16 +10,11 @@ import Movie from './components/Movie.vue'
 import ProductList from './components/ProductList.vue'
 import Cart from './components/Cart.vue'
 
+
 Vue.filter('currency', currency)
-
-
-
-
 Vue.use(VueResource);
 Vue.use(VueRouter)
 Vue.use(Vuex)
-
-
 
 // 2. 定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
@@ -27,9 +22,9 @@ Vue.use(Vuex)
 // 或者，只是一个组件配置对象。
 // 我们晚点在讨论嵌套路由。
 const routes = [
-  { path: '/movie', components: { movie: Movie } },
+  { path: '/movie', components: { movie: Movie }, alias: '/douban' },
   {
-    path: '/',
+    path: '/shop',
     components: {
       product: ProductList,
       cart: Cart
@@ -42,6 +37,8 @@ const routes = [
 const router = new VueRouter({
   routes // （缩写）相当于 routes: routes
 })
+//
+
 // 4. 创建和挂载根实例。
 // 记得要通过 router 配置参数注入路由，
 // 从而让整个应用都有路由功能
@@ -54,3 +51,12 @@ const vm = new Vue({
   router,
   render: h => h(App)
 })
+Vue.http.interceptors.push((request, next) => {
+
+  vm.$store.commit(types.SHOW_LOADING)
+  next((response) => {
+    if (!response.ok) { }
+    vm.$store.commit(types.SHOW_LOADING)
+    return response;
+  })
+});    
