@@ -17,10 +17,6 @@
 
 <script>
 
-
-// import ProductList from './components/ProductList.vue'
-// import Cart from './components/Cart.vue'
-// import Movie from './components/Movie.vue'
 import loading from './components/loading.vue'
 import Vue from  'vue'
 
