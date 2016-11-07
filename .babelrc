@@ -3,5 +3,11 @@
     "es2015",
     "react",
     "stage-2"
-  ]
+  ],
+   "plugins": [["component", [
+    {
+      "libraryName": "mint-ui",
+      "style": true
+    }
+  ]]]
 }
