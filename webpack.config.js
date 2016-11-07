@@ -8,6 +8,7 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+ 
   module: {
     rules: [
       {
@@ -24,6 +25,10 @@ module.exports = {
         query: {
           presets:['es2015' ,'stage-2','react']
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

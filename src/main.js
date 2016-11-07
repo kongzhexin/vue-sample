@@ -1,26 +1,35 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
-import App from './App.vue'
-import store from './store'
 import VueRouter from 'vue-router'
+
+import App from './App.vue'
+import ProductList from './components/ProductList.vue'
+import Movie from './components/Movie.vue'
+import Cart from './components/Cart.vue'
+import Mine from './components/Mine.vue'
+
+import store from './store'
 import { currency } from './currency'
 import * as types from './store/mutation-types.js'
-import Movie from './components/Movie.vue'
-import ProductList from './components/ProductList.vue'
-import Cart from './components/Cart.vue'
 
+// import { Tabbar, TabItem } from 'mint-ui'
+// import { Field } from 'mint-ui';
+import MintUI from 'mint-ui'
 
 Vue.filter('currency', currency)
 Vue.use(VueResource);
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
-// 2. 定义路由
+//引用mint-ui插件
+// Vue.component(Tabbar.name,Tabbar)
+// Vue.component(TabItem.name,TabItem)
+// Vue.component(Field.name, Field);
+Vue.use(MintUI)
+//  定义路由
 // 每个路由应该映射一个组件。 其中"component" 可以是
-// 通过 Vue.extend() 创建的组件构造器，
 // 或者，只是一个组件配置对象。
-// 我们晚点在讨论嵌套路由。
 const routes = [
   { path: '/movie', components: { movie: Movie }, alias: '/douban' },
   {
@@ -28,6 +37,12 @@ const routes = [
     components: {
       product: ProductList,
       cart: Cart
+    }
+  },
+  {
+    path:'/mine',
+    components:{
+      mine:Mine
     }
   }
 ]
