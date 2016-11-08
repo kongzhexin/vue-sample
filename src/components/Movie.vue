@@ -52,11 +52,17 @@
     .item{
         display:inline-block;
         text-align:center;
-        
     }
     ul li{
-        list-style-type:none
+        list-style-type:none; 
+        letter-spacing:normal;
+        word-spacing:normal;
     }
+    img{
+        height:189px;
+        width:128px;
+    }
+
     .allstar50,.allstar45,.allstar40,.allstar35,.allstar30,.allstar25,.allstar20,.allstar15,.allstar10,.allstar05,.allstar00,.rating1-t,.rating15-t,.rating2-t,.rating25-t,.rating3-t,.rating35-t,.rating4-t,.rating45-t,.rating5-t,.rating-t,.starb ~ .stars5,.starb ~ .stars4,.starb ~ .stars3,.starb ~ .stars2,.starb ~ .stars1,.collectors .stars5,.collectors .stars4,.collectors .stars3,.collectors .stars2,.collectors .stars1 {
         display: inline-block;
         *display: inline;

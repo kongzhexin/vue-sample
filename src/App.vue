@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <mt-tabbar v-model="selected">
+    <mt-tabbar v-model="selected" :fixed="true">
       <mt-tab-item id="shop">
         <img slot="icon" src="./assets/logo.png">
         <router-link to="/shop" >购物</router-link>
