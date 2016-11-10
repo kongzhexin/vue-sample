@@ -3,11 +3,13 @@
     <mt-tabbar v-model="selected" :fixed="true">
       <mt-tab-item id="shop">
         <img slot="icon" src="./assets/logo.png">
-        <router-link to="/shop" >购物</router-link>
+        <!--<router-link to="/shop" >购物</router-link>-->
+        购物
       </mt-tab-item>
       <mt-tab-item id="movie">
         <img slot="icon" src="./assets/logo.png">
-        <router-link to="/movie" >电影</router-link>
+        <!--<router-link to="/movie" >电影</router-link>-->
+        电影
       </mt-tab-item>
       <mt-tab-item id="movieDetail">
         <img slot="icon" src="./assets/logo.png">
@@ -19,7 +21,14 @@
       </mt-tab-item>
     </mt-tabbar>
     <mt-tab-container v-model="selected">
-      <mt-tab-container-item id="mine">
+      <mt-tab-container-item id="shop">
+        <product></product>
+        <cart></cart>
+      </mt-tab-container-item>
+       <mt-tab-container-item id="movie">
+        <movie></movie>
+      </mt-tab-container-item>
+       <mt-tab-container-item id="mine">
         <mine></mine>
       </mt-tab-container-item>
     </mt-tab-container>
@@ -40,10 +49,13 @@
 
 import loading from './components/Loading.vue'
 import mine from './components/Mine.vue'
+import product from './components/ProductList.vue'
+import movie from './components/Movie.vue'
+import cart from './components/Cart.vue'
 
 export default {
   name: 'app',
-  components: {loading,mine},
+  components: {loading,mine,product,cart,movie},
   data () {
     return {
       msg: 'Welcome to Kongzx Vue.js App',
