@@ -11,9 +11,9 @@
         <!--<router-link to="/movie" >电影</router-link>-->
         电影
       </mt-tab-item>
-      <mt-tab-item id="movieDetail">
+      <mt-tab-item id="register">
         <img slot="icon" src="./assets/logo.png">
-        详情
+        注册
       </mt-tab-item>
       <mt-tab-item id="mine">
         <img slot="icon" src="./assets/logo.png">
@@ -28,17 +28,20 @@
        <mt-tab-container-item id="movie">
         <movie></movie>
       </mt-tab-container-item>
+       <mt-tab-container-item id="register">
+        <register></register>
+      </mt-tab-container-item>
        <mt-tab-container-item id="mine">
         <mine></mine>
       </mt-tab-container-item>
     </mt-tab-container>
-    <div class= "shop">
+    <!--<div class= "shop">
       <router-view name='product'></router-view>
       <router-view name='cart'></router-view>
-    </div>
-    <div class='movie'>
+    </div>-->
+    <!--<div class='movie'>
       <router-view name='movie'></router-view>
-    </div>
+    </div>-->
     <div>
      <loading ></loading>
     </div>
@@ -49,13 +52,15 @@
 
 import loading from './components/Loading.vue'
 import mine from './components/Mine.vue'
+import register from './components/Register.vue'
 import product from './components/ProductList.vue'
 import movie from './components/Movie.vue'
 import cart from './components/Cart.vue'
 
+
 export default {
   name: 'app',
-  components: {loading,mine,product,cart,movie},
+  components: {loading,mine,register,product,cart,movie},
   data () {
     return {
       msg: 'Welcome to Kongzx Vue.js App',
