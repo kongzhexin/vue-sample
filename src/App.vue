@@ -45,6 +45,7 @@
     <div>
      <loading ></loading>
     </div>
+    <check></check>
   </div>
 </template>
 
@@ -56,11 +57,12 @@ import register from './components/Register.vue'
 import product from './components/ProductList.vue'
 import movie from './components/Movie.vue'
 import cart from './components/Cart.vue'
+import check from './components/Check.vue'
 
 
 export default {
   name: 'app',
-  components: {loading,mine,register,product,cart,movie},
+  components: {loading,mine,register,product,cart,movie,check},
   data () {
     return {
       msg: 'Welcome to Kongzx Vue.js App',
