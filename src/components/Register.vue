@@ -5,26 +5,26 @@
             <mt-tab-item id="mobile">手机注册</mt-tab-item>
         </mt-navbar>
         <mt-tab-container v-model="selected">
-        <mt-tab-container-item id="mail">
-            <mt-field label="用户名" placeholder="请输入用户名"  v-model="user.username"></mt-field>
-            <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="user.email"></mt-field>
-            <mt-field label="密码" placeholder="请输入密码" type="password" v-model="user.password"></mt-field>
-            <div style="margin-top:50px">
-                <mt-button size="large" type='primary' @click.native="mailRegist">注册</mt-button>
-                <mt-button size="large" type='default' style="margin-top:10px">登录</mt-button>
-            </div>  
-        </mt-tab-container-item>
-        <mt-tab-container-item id="mobile">
-            <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="user.phone">
-            </mt-field>
-            <mt-field placeholder="请输入验证码" label="验证码" v-model="verifyCode">
-                <mt-button size="small" type='primary' style="margin-top:7px" @click.native="sendMessage">获取验证码</mt-button>
-            </mt-field>
-            <div style="margin-top:50px">
-                <mt-button size="large" type='primary' @click.native="mobileRegist">注册</mt-button>
-                <mt-button size="large" type='default' style="margin-top:10px">登录</mt-button>
-            </div>  
-        </mt-tab-container-item>
+            <mt-tab-container-item id="mail">
+                <mt-field label="用户名" placeholder="请输入用户名"  v-model="user.username"></mt-field>
+                <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="user.email"></mt-field>
+                <mt-field label="密码" placeholder="请输入密码" type="password" v-model="user.password"></mt-field>
+                <div style="margin-top:50px">
+                    <mt-button size="large" type='primary' @click.native="mailRegist">注册</mt-button>
+                    <mt-button size="large" type='default' style="margin-top:10px">登录</mt-button>
+                </div>  
+            </mt-tab-container-item>
+            <mt-tab-container-item id="mobile">
+                <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="user.phone">
+                </mt-field>
+                <mt-field placeholder="请输入验证码" label="验证码" v-model="verifyCode">
+                    <mt-button size="small" type='primary' style="margin-top:7px" @click.native="sendMessage">获取验证码</mt-button>
+                </mt-field>
+                <div style="margin-top:50px">
+                    <mt-button size="large" type='primary' @click.native="mobileRegist">注册</mt-button>
+                    <mt-button size="large" type='default' style="margin-top:10px">登录</mt-button>
+                </div>  
+            </mt-tab-container-item>
         </mt-tab-container>
     </div>
 </template>
