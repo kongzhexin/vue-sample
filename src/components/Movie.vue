@@ -37,9 +37,9 @@
                     headers: {
                     },
                     emulateJSON: true
-                    }).then(function(response){
+                    }).then((response)=>{
                         this.articles=response.data.subjects
-                    },function(){
+                    },()=>{
                         console.log(response)
                 });
             }

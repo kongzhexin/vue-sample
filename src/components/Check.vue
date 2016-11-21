@@ -4,7 +4,7 @@
       <tr>
         <th>
           <label>
-            <input type="checkbox" v-model="checked"  v-checkAll='list' />全选</label>
+            <input id='all' type="checkbox" v-model="checked"  v-checkAll='list' />全选</label>
         </th>
         <th>Name</th>
         <th>Age</th>
@@ -13,7 +13,7 @@
     <tbody>
       <tr v-for="item in list">
         <td>
-          <input type="checkbox"  v-model="item.checked" />
+          <input type="checkbox"   v-model="item.checked" />
         </td>
         <td>{{item.name}}</td>
         <td>{{item.age}}</td>
@@ -30,12 +30,15 @@ import checkAll from '../directive/check-all.js'
 Vue.use(checkAll)
 var _list = [{
         name: "小明",
+        checked:false,
         age: 23
     }, {
         name: "小红",
+         checked:false,
         age: 20
     }, {
         name: "Sigma",
+         checked:false,
         age: 28
     }];
 export default {
@@ -63,7 +66,8 @@ export default {
     data () {
         return {
             list: _list,
-            checked:false
+            checked:false,
+            itemChecked:[]
         }
     }
 }
