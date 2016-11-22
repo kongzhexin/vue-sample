@@ -29,7 +29,7 @@
         <movie></movie>
       </mt-tab-container-item>
        <mt-tab-container-item id="register">
-        <register></register>
+        <register v-on:switchTab='changeTab'></register>
       </mt-tab-container-item>
        <mt-tab-container-item id="mine">
         <mine></mine>
@@ -46,6 +46,7 @@
      <loading ></loading>
     </div>
     <!--<check></check>-->
+    <input v-model='selected'></input>{{selected}}
   </div>
 </template>
 
@@ -59,24 +60,28 @@ import movie from './components/Movie.vue'
 import cart from './components/Cart.vue'
 // import check from './components/Check.vue'
 
-
+import {mapGetters} from 'vuex'
 export default {
   name: 'app',
   components: {loading,mine,register,product,cart,movie},
   data () {
     return {
       msg: 'Welcome to Kongzx Vue.js App',
-      selected:"shop"
+      selected:'shop'
     }
+  },
+  computed :{
+    // ...mapGetters({
+    //   selected : 'tabShow'
+    // })
   },
   watch:{
      '$route': 'change'
     },
   methods:{
-      change () {
-        this.msg=this.$route.fullPath
+      changeTab (tab) {
+        this.selected=tab
       }
-
     }
 }
 </script>

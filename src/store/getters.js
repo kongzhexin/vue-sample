@@ -14,3 +14,5 @@ export const cartProducts = state => {
 }
 
 export const showLoading = state => state.loading.showLoading
+
+export const tabShow = state =>state.app.tabShow

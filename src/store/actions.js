@@ -25,3 +25,6 @@ export const getAllProducts = ({ commit }) => {
   })
 }
 
+export const switchTab =({commit},tabShow)=>{
+  commit(types.SWITCHTAB,{tabShow})
+}

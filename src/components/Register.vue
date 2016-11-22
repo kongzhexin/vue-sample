@@ -36,6 +36,7 @@ import { Toast } from 'mint-ui';
 import { Indicator } from 'mint-ui';
 
 export default {
+    name:'register',
     data () {
         return {
             selected:'mobile',
@@ -55,10 +56,6 @@ export default {
         appId: APP_ID,
         appKey: APP_KEY
         });
-        // BV.push({
-        //     appId: APP_ID,
-        //     appKey: APP_KEY
-        // });
     },
     methods:{
         sendMessage () {
@@ -96,12 +93,14 @@ export default {
             user.setPassword(this.user.password);
             // 设置邮箱
             user.setEmail(this.user.email);
+            var self =this;
             user.signUp().then(function (loginedUser) {
                 Toast({
                     message: '注册成功',
                     iconClass: 'icon icon-success',
                     duration: 1000
                 });
+                self.$emit('switchTab','mine')
             }, function (error) {
                 Toast({
                     message: error,
