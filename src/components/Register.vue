@@ -21,8 +21,8 @@
                     <mt-button size="small" type='primary' style="margin-top:7px" @click.native="sendMessage">获取验证码</mt-button>
                 </mt-field>
                 <div style="margin-top:50px">
-                    <mt-button size="large" type='primary' @click.native="mobileRegist">注册</mt-button>
-                    <mt-button size="large" type='default' style="margin-top:10px">登录</mt-button>
+                    <mt-button size="large" type='primary' @click="mobileRegist">注册</mt-button>
+                    <mt-button size="large" type='default' style="margin-top:10px" @click.native="logIn">登录</mt-button>
                 </div>  
             </mt-tab-container-item>
         </mt-tab-container>
@@ -88,6 +88,7 @@ export default {
         mailRegist () {
             var user = new AV.User();
             // 设置用户名
+      
             user.setUsername(this.user.username);
             // 设置密码
             user.setPassword(this.user.password);
@@ -124,7 +125,14 @@ export default {
                 }, function (error) {
                     // 失败
                 });
+        },
+        logIn () {
+            AV.User.logIn(this.user.username, this.user.password).then(function (loginedUser) {
+                console.log(loginedUser);
+                }, function (error) {
+            });
         }
+
     }
 
 }

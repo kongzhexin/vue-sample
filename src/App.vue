@@ -7,7 +7,7 @@
         购物
       </mt-tab-item>
       <mt-tab-item id="movie">
-        <img slot="icon" src="./assets/logo.png">
+        <img slot="icon" >
         <!--<router-link to="/movie" >电影</router-link>-->
         电影
       </mt-tab-item>
@@ -46,7 +46,7 @@
      <loading ></loading>
     </div>
     <!--<check></check>-->
-    <input v-model='selected'></input>{{selected}}
+    
   </div>
 </template>
 
@@ -80,6 +80,7 @@ export default {
     },
   methods:{
       changeTab (tab) {
+     
         this.selected=tab
       }
     }
@@ -92,5 +93,5 @@ export default {
     display:inline-block;
     width:50%
   }
- 
+  
 </style>
