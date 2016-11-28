@@ -30,7 +30,14 @@ export default {
   },
   methods: {
     checkout (products) {
-      this.$store.dispatch('checkout', products)
+      //this.$store.dispatch('checkout', products)
+      debugger
+      this.$http.post('http://127.0.0.1:8888/api',{projectId:'fc0eef07-94d9-4321-b1ff-f93e1d5216a8'},{emulateJSON :true})
+      .then(function(response){
+        console.log(response.body)
+      },function(response){
+        console.log(response.statusText)
+      });
     }
   }
 }

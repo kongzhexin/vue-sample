@@ -2,11 +2,11 @@
   <ul>
     <li v-for="p in products">
       {{ p.title }} - {{ p.price | currency }}
-      <br>
+      
       <button
         :disabled="!p.inventory"
-        @click="addToCart(p)">
-        Add to cart
+        @click="addToCart(p)" >
+        Add
       </button>
     </li>
   </ul>
@@ -27,3 +27,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  button{
+    height:1.2em;
+    float:right;
+  }
+</style>

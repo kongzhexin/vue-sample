@@ -38,6 +38,7 @@
                     },
                     emulateJSON: true
                     }).then((response)=>{
+                      
                         this.articles=response.data.subjects
                     },()=>{
                         console.log(response)
